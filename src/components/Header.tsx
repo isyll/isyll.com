@@ -37,7 +37,7 @@ function Header() {
             ))}
           </ul>
         </nav>
-        <Button className='font-[600] text-[24px]'>CV</Button>
+        <Button className='font-[600]'>CV</Button>
       </div>
     </header>
   )
