@@ -30,9 +30,14 @@ function Header() {
       <div className='flex gap-32 items-center'>
         <nav>
           <ul className='list-none flex gap-10'>
-            {navLinks.map((item) => (
-              <li>
-                <a className='hover:text-primary transition-colors duration-75' href={item.href}>{item.text}</a>
+            {navLinks.map((item, index) => (
+              <li key={index}>
+                <a
+                  className='hover:text-primary transition-colors duration-75'
+                  href={item.href}
+                >
+                  {item.text}
+                </a>
               </li>
             ))}
           </ul>

@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useSpring, animated } from 'react-spring'
-import {  easeCubicOut } from 'd3-ease'
+import { easeCubicOut } from 'd3-ease'
 import useTextAnimation from '../hooks/useTextAnimation'
 
 function Hero() {
@@ -14,6 +14,8 @@ function Hero() {
 
   useEffect(() => {
     api.start()
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (() => api.stop()) as any
   }, [api])
 
   return (
