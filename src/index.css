@@ -57,3 +57,18 @@
   font-style: normal;
   font-display: swap;
 }
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'WF Visual Sans', Arial, sans-serif;
+  color: white;
+}
+
+#root {
+  max-width: 1280px;
+  height: 100%;
+  width: 100%;
+}
