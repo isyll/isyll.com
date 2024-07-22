@@ -3,7 +3,7 @@ import Button from './ui/Button'
 
 function Header() {
   return (
-    <header className='flex justify-between px-12 py-8 w-full items-center'>
+    <header className='flex justify-between px-12 py-5 w-full items-center border-b border-tertiary'>
       <Logo />
       <div className='flex gap-32 items-center'>
         <nav>
