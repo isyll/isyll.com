@@ -7,10 +7,10 @@ function Footer() {
       <p className='text-dark'>
         &copy; 2024 Ibrahima Sylla. All rights reserved
       </p>
-      <div className='flex gap-8'>
+      <div className='flex gap-6'>
         {socials.map((item, index) => (
           <a key={index} href={item.href} target='_blank'>
-            <img src={item.logo} width={32} alt={item.alt} />
+            <img src={item.logo} width={28} alt={item.alt} />
           </a>
         ))}
       </div>

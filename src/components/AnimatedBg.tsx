@@ -1,7 +1,7 @@
 function AnimatedBg() {
   return (
-    <div className='fixed inset-0'>
-      <div className='w-full h-full'></div>
+    <div className='fixed inset-0 z-[-9999]'>
+      <div className='w-full h-full flex justify-center items-center'></div>
     </div>
   )
 }

@@ -10,6 +10,7 @@ function App() {
       <AnimatedBg />
       <Header />
       <Hero />
+      <div className=' h-[1000px]'></div>
       <Contact />
       <Footer />
     </>

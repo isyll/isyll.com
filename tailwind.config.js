@@ -10,7 +10,7 @@ export default {
         dark: 'rgb(137, 137, 137)',
       },
       fontSize: {
-        xxl: '50px',
+        xxl: '40px',
       },
     },
   },

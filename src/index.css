@@ -73,3 +73,6 @@ body {
   width: 100%;
 }
 
+.group:hover .child:not(:hover) {
+  opacity: 0.5;
+}
