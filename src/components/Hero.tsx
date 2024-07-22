@@ -15,12 +15,12 @@ function Hero() {
   useEffect(() => {
     api.start()
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (() => api.stop()) as any
+    return api.stop as any
   }, [api])
 
   return (
-    <div className='flex justify-between px-16 items-center overflow-x-hidden flex-wrap'>
-      <h1 className='text-[84px] leading-none font-bold'>
+    <div className='flex justify-between px-24 items-center overflow-x-hidden flex-wrap'>
+      <h1 className='text-[78px] leading-none font-bold'>
         <animated.div style={line1}>
           <span className='text-primary'>Ibrahima Sylla</span> —
         </animated.div>
@@ -31,7 +31,7 @@ function Hero() {
         style={styles}
         src='/coder-illustration.svg'
         alt='Coder illustration'
-        width={500}
+        width={450}
       />
     </div>
   )

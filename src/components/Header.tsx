@@ -1,32 +1,10 @@
+import Logo from './Logo'
 import Button from './ui/Button'
 
 function Header() {
-  const navLinks = [
-    {
-      text: 'HOME',
-      href: '#home',
-    },
-    {
-      text: 'ABOUT ME',
-      href: '#about',
-    },
-    {
-      text: 'SKILLS',
-      href: '#skills',
-    },
-    {
-      text: 'MY PROJECTS',
-      href: '#projects',
-    },
-    {
-      text: 'CONTACT',
-      href: '#contact',
-    },
-  ]
-
   return (
-    <header className='flex justify-between px-12 py-6 w-full items-center'>
-      <h1 className='text-xxl'>Isyll</h1>
+    <header className='flex justify-between px-12 py-8 w-full items-center'>
+      <Logo />
       <div className='flex gap-32 items-center'>
         <nav>
           <ul className='list-none flex gap-10'>
@@ -47,5 +25,28 @@ function Header() {
     </header>
   )
 }
+
+const navLinks = [
+  {
+    text: 'HOME',
+    href: '#home',
+  },
+  {
+    text: 'ABOUT ME',
+    href: '#about',
+  },
+  {
+    text: 'SKILLS',
+    href: '#skills',
+  },
+  {
+    text: 'MY PROJECTS',
+    href: '#projects',
+  },
+  {
+    text: 'CONTACT',
+    href: '#contact',
+  },
+]
 
 export default Header

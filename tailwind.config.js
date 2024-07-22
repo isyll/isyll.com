@@ -6,6 +6,8 @@ export default {
       colors: {
         primary: '#146ef5',
         secondary: '#080808',
+        tertiary: 'rgb(43, 43, 43)',
+        dark: 'rgb(137, 137, 137)',
       },
       fontSize: {
         xxl: '50px',
