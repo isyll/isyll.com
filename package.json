@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "node deploy.js",
+    "build-deploy": "npm run build && node deploy.js"
   },
   "dependencies": {
     "@react-spring/web": "^9.7.4",
@@ -16,6 +18,7 @@
     "@uidotdev/usehooks": "^2.4.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.21",
+    "gh-pages": "^6.1.1",
     "gsap": "^3.12.5",
     "lucide-react": "^0.414.0",
     "react": "^18.3.1",

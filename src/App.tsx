@@ -15,9 +15,9 @@ function App() {
       <Hero />
       <About />
       <Skills />
-      <Contact />
       <MyProjects />
-      <div className=' h-[1000px]'></div>
+      <Contact />
+      <div className='h-[200px]'></div>
       <Footer />
     </main>
   )

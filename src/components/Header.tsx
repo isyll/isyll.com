@@ -60,7 +60,9 @@ function Header() {
               ))}
             </ul>
           </nav>
-          <Button className='font-[600]'>CV</Button>
+          <a href='/ibrahima-sylla-resume.pdf'>
+            <Button className='font-[600]'>CV</Button>
+          </a>
           <div className='block md:hidden'>
             <button onClick={toggleNavbar}>
               <AlignJustify />

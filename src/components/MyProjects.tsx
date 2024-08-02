@@ -2,8 +2,6 @@ import clsx from 'clsx'
 import { ExternalLink } from 'lucide-react'
 
 export default function MyProjects() {
-  const colors = ['#ff6b00', '', '']
-  console.log(colors[0])
   return (
     <div id='projects' className='pt-3'>
       <div className='my-14 mx-28 justify-between items-center overflow-hidden'>
