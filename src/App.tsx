@@ -1,3 +1,4 @@
+import { About } from './components/About'
 import AnimatedBg from './components/AnimatedBg'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -10,6 +11,7 @@ function App() {
       <AnimatedBg />
       <Header />
       <Hero />
+      <About />
       <div className=' h-[1000px]'></div>
       <Contact />
       <Footer />

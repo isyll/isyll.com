@@ -1,37 +1,110 @@
+import { useAnimation, motion, Variants, circInOut } from 'framer-motion'
 import { useEffect } from 'react'
-import { useSpring, animated } from 'react-spring'
-import { easeCubicOut } from 'd3-ease'
-import useTextAnimation from '../hooks/useTextAnimation'
+import { useInView } from 'react-intersection-observer'
 
 function Hero() {
-  const [styles, api] = useSpring(() => ({
-    from: { transform: 'translateX(100%)', opacity: '0%' },
-    to: { transform: 'translateX(0%)', opacity: '100%' },
-    config: { duration: 1000, easing: easeCubicOut },
-    delay: 300,
-  }))
-  const [line1, line2, line3] = useTextAnimation()
+  const duration = 0.4
+  const imgVariants: Variants = {
+      visible: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: duration },
+      },
+      hidden: { opacity: 0, x: 400 },
+    },
+    lineVariants: Variants = {
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: duration, ease: circInOut },
+      },
+      hidden: { opacity: 0, y: 100 },
+    }
+
+  const controls = useAnimation()
+  const [ref, inView] = useInView()
+
+  const c1Controls = useAnimation()
+  const c1Variants = { ...lineVariants }
+  const [c1Ref, c1InView] = useInView()
+  const c2Controls = useAnimation()
+  const c2Variants = {
+    ...lineVariants,
+    visible: {
+      ...lineVariants.visible,
+      transition: { duration: duration, delay: 0.1 },
+    },
+  }
+  const [c2Ref, c2InView] = useInView()
+  const c3Controls = useAnimation()
+  const c3Variants = {
+    ...lineVariants,
+    visible: {
+      ...lineVariants.visible,
+      transition: { duration: duration, delay: 0.25 },
+    },
+  }
+  const [c3Ref, c3InView] = useInView()
 
   useEffect(() => {
-    api.start()
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return api.stop as any
-  }, [api])
+    if (inView) {
+      controls.start('visible')
+      c1Controls.start('visible')
+      c2Controls.start('visible')
+      c3Controls.start('visible')
+    } else {
+      controls.start('hidden')
+      c1Controls.start('hidden')
+      c2Controls.start('hidden')
+      c3Controls.start('hidden')
+    }
+  }, [
+    controls,
+    inView,
+    c1Controls,
+    c1InView,
+    c2Controls,
+    c2InView,
+    c3Controls,
+    c3InView,
+  ])
 
   return (
-    <div className='flex justify-between px-24 items-center overflow-x-hidden flex-wrap'>
+    <div className='flex justify-between px-24 items-center overflow-hidden flex-wrap'>
       <h1 className='text-[78px] leading-none font-bold'>
-        <animated.div style={line1}>
+        <motion.div
+          ref={c1Ref}
+          animate={c1Controls}
+          initial='hidden'
+          variants={c1Variants}
+        >
           <span className='text-primary'>Ibrahima Sylla</span> —
-        </animated.div>
-        <animated.div style={line2}>Web Developer</animated.div>
-        <animated.div style={line3}>Flutter Engineer</animated.div>
+        </motion.div>
+        <motion.div
+          ref={c2Ref}
+          animate={c2Controls}
+          initial='hidden'
+          variants={c2Variants}
+        >
+          Web Developer
+        </motion.div>
+        <motion.div
+          ref={c3Ref}
+          animate={c3Controls}
+          initial='hidden'
+          variants={c3Variants}
+        >
+          Flutter Engineer
+        </motion.div>
       </h1>
-      <animated.img
-        style={styles}
+      <motion.img
+        ref={ref}
+        animate={controls}
+        initial='hidden'
+        variants={imgVariants}
         src='/coder-illustration.svg'
         alt='Coder illustration'
-        width={450}
+        width={460}
       />
     </div>
   )
