@@ -60,7 +60,7 @@ function Header() {
               ))}
             </ul>
           </nav>
-          <Button className='font-[600]'>My CV</Button>
+          <Button className='font-[600]'>CV</Button>
           <div className='block md:hidden'>
             <button onClick={toggleNavbar}>
               <AlignJustify />

@@ -4,6 +4,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import MyProjects from './components/MyProjects'
 import Skills from './components/Skills'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <About />
       <Skills />
       <Contact />
+      <MyProjects />
       <div className=' h-[1000px]'></div>
       <Footer />
     </main>

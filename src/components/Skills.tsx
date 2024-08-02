@@ -18,8 +18,8 @@ export default function Skills() {
       <div className='my-20 mx-28 '>
         <h1 className='mb-8 text-xxl'>My Skills</h1>
         <div className='pt-8 flex justify-between items-center overflow-hidden flex-wrap'>
-          {images.map((src) => (
-            <div className='px-3'>
+          {images.map((src, index) => (
+            <div key={index} className='px-3'>
               <motion.img
                 src={src}
                 width={75}

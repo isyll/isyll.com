@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 function Hero() {
-  const duration = 0.4
+  const duration = 0.6
   const imgVariants: Variants = {
       visible: {
         opacity: 1,
@@ -25,14 +25,18 @@ function Hero() {
   const [ref, inView] = useInView()
 
   const c1Controls = useAnimation()
-  const c1Variants = { ...lineVariants }
+  const c1Variants = { ...lineVariants,
+    visible: {
+      ...lineVariants.visible,
+      transition: { duration: duration, delay: 0.06 },
+    }, }
   const [c1Ref, c1InView] = useInView()
   const c2Controls = useAnimation()
   const c2Variants = {
     ...lineVariants,
     visible: {
       ...lineVariants.visible,
-      transition: { duration: duration, delay: 0.1 },
+      transition: { duration: duration, delay: 0.13 },
     },
   }
   const [c2Ref, c2InView] = useInView()
@@ -41,7 +45,7 @@ function Hero() {
     ...lineVariants,
     visible: {
       ...lineVariants.visible,
-      transition: { duration: duration, delay: 0.25 },
+      transition: { duration: duration, delay: 0.28 },
     },
   }
   const [c3Ref, c3InView] = useInView()
