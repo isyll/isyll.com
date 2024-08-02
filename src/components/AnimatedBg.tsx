@@ -4,24 +4,6 @@ import Particles from 'react-particles'
 import { loadFull } from 'tsparticles'
 
 function AnimatedBg() {
-  // const base = [
-  //   '/logos/angular.png',
-  //   '/logos/java.png',
-  //   '/logos/laravel.png',
-  //   '/logos/nextjs.png',
-  //   '/logos/react.png',
-  //   '/logos/spring.png',
-  //   '/logos/symfony.png',
-  //   '/logos/tailwind.png',
-  //   '/logos/ts.png',
-  // ]
-
-  // const images: string[] = base
-  // for (let i = 0; i < 5; i++)
-  //   for (let j = 0; j < base.length; j++) {
-  //     images.push(base[j])
-  //   }
-
   const options: any = {
     particles: {
       number: {

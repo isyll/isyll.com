@@ -1,18 +1,38 @@
 import { AlignJustify } from 'lucide-react'
 import Logo from './Logo'
 import Button from './ui/Button'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Overlay from './Overlay'
 import { Link } from 'react-scroll'
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const toggleNavbar = () => setIsOpen(!isOpen)
+  const [stickyClass, setStickyClass] = useState('relative')
+
+  useEffect(() => {
+    window.addEventListener('scroll', stickNavbar)
+
+    return () => {
+      window.removeEventListener('scroll', stickNavbar)
+    }
+  }, [])
+
+  const stickNavbar = () => {
+    if (window !== undefined) {
+      const windowHeight = window.scrollY
+      windowHeight > 200
+        ? setStickyClass('fixed top-0 left-0 z-50')
+        : setStickyClass('relative')
+    }
+  }
 
   return (
     <>
       {isOpen && <Overlay />}
-      <header className='backdrop-blur-sm	flex justify-between px-12 py-3 md:py-0 w-full items-center border-b border-tertiary bg-opacity-40'>
+      <header
+        className={`backdrop-blur-sm	flex justify-between px-12 py-3 md:py-0 w-full items-center border-b border-tertiary bg-opacity-40 ${stickyClass}`}
+      >
         <a href='/'>
           <Logo />
         </a>

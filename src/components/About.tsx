@@ -67,33 +67,32 @@ export function About() {
   ]
 
   return (
-    <div
-      id='about'
-      className='my-20 mx-28 flex justify-between items-center overflow-hidden flex-wrap'
-    >
-      <div className='w-full md:w-[500px]'>
-        <h1 className='mb-4 text-xxl'>About Me</h1>
-        {items.map((item, index) => (
-          <motion.p
-            ref={values[index].ref}
-            variants={values[index].variants}
-            animate={values[index].controls}
-            key={index}
-            className='mb-10 text-lg'
-          >
-            {item}
-          </motion.p>
-        ))}
+    <div className='pt-3' id='about'>
+      <div className='my-32 mx-28 flex justify-between items-center overflow-hidden flex-wrap'>
+        <div className='w-full md:w-[500px]'>
+          <h1 className='mb-4 text-xxl'>About Me</h1>
+          {items.map((item, index) => (
+            <motion.p
+              ref={values[index].ref}
+              variants={values[index].variants}
+              animate={values[index].controls}
+              key={index}
+              className='mb-5 text-lg'
+            >
+              {item}
+            </motion.p>
+          ))}
+        </div>
+        <motion.img
+          ref={refImg}
+          variants={delayImg(0.3)}
+          animate={controlsImg}
+          src='/ibou.png'
+          width={400}
+          alt=''
+          className='rounded-full border border-[#6b6b6b] border-opacity-70'
+        />
       </div>
-      <motion.img
-        ref={refImg}
-        variants={delayImg(0.3)}
-        animate={controlsImg}
-        src='/ibou.png'
-        width={400}
-        alt=''
-        className='rounded-full border border-[#6b6b6b] border-opacity-70'
-      />
     </div>
   )
 }

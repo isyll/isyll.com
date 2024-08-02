@@ -1,4 +1,4 @@
-import { useAnimation, motion, Variants, circInOut } from 'framer-motion'
+import { useAnimation, motion, Variants } from 'framer-motion'
 import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
@@ -8,17 +8,17 @@ function Hero() {
       visible: {
         opacity: 1,
         x: 0,
-        transition: { duration: duration },
+        transition: { duration: duration, ease: 'easeInOut' },
       },
-      hidden: { opacity: 0, x: 400 },
+      hidden: { opacity: 0, x: 400, transition: { ease: 'easeInOut' } },
     },
     lineVariants: Variants = {
       visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: duration, ease: circInOut },
+        transition: { duration: duration, ease: 'easeInOut' },
       },
-      hidden: { opacity: 0, y: 100 },
+      hidden: { opacity: 0, y: 100, transition: { ease: 'easeInOut' } },
     }
 
   const controls = useAnimation()
